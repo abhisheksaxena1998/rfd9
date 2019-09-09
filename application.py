@@ -116,12 +116,12 @@ def register():
         #processed_tweets.append(processed_tweet)
     
         print ((processed_tweet))            #print(model.predict(vect.transform([tr])))
-        filename='comb_model.pkl'
+        #filename='comb_model.pkl'
 
         #pickle.dump(model, open(filename, 'wb'))
-        load_lr_model =pickle.load(open(filename, 'rb'))
+        #load_lr_model =pickle.load(open(filename, 'rb'))
         #print (load_lr_model.predict(vect.transform([tr])))
 
 
-    return flask.render_template('result.html',prediction=flairs[int(load_lr_model.predict(vect.transform([processed_tweet])))],url=mm)
+    return flask.render_template('result.html',prediction=flairs[int(model.predict(vect.transform([processed_tweet])))],url=mm)
         
